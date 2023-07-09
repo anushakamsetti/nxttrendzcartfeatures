@@ -8,11 +8,15 @@ import './index.css'
 const CartItem = props => (
   <CartContext.Consumer>
     {value => {
-      const {removeCartItem} = value
+      const {
+          removeCartItem,
+          incrementCartItemQuantity,
+          decrementCartItemQuantity,
+      } = value 
       const {cartItemDetails} = props
       const {id, title, brand, quantity, price, imageUrl} = cartItemDetails
-      const onRemoveCartItem = () => {
-        removeCartItem(id)
+      const onClickDecrement = () => {
+        decrementCartItemCartQuantity(id)
       }
       const onClickIncrement = () => {
         incrementCartItemQuantity(id)
