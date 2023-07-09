@@ -9,14 +9,14 @@ const CartItem = props => (
   <CartContext.Consumer>
     {value => {
       const {
-          removeCartItem,
-          incrementCartItemQuantity,
-          decrementCartItemQuantity,
-      } = value 
+        removeCartItem,
+        incrementCartItemQuantity,
+        decrementCartItemQuantity,
+      } = value
       const {cartItemDetails} = props
       const {id, title, brand, quantity, price, imageUrl} = cartItemDetails
       const onClickDecrement = () => {
-        decrementCartItemCartQuantity(id)
+        decrementCartItemQuantity(id)
       }
       const onClickIncrement = () => {
         incrementCartItemQuantity(id)
@@ -55,7 +55,7 @@ const CartItem = props => (
               </button>
             </div>
             <div className="total-price-remove-container">
-              <p className="cart-total-price">Rs {price * quantity}/-</p>
+              <p className="cart-total-price">Rs {totalPrice}/-</p>
               <button
                 className="remove-button"
                 type="button"
